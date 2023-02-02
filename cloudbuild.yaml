@@ -4,21 +4,21 @@ steps:
   args:
     - build
     - '-t'
-    - 'us-central1-docker.pkg.dev/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs:$COMMIT_SHA'
+    - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs:$COMMIT_SHA'
     - '-t'
-    - 'us-central1-docker.pkg.dev/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
+    - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
     - '--cache-from'
-    - 'us-central1-docker.pkg.dev/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
+    - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
     - '.'
   id: Build
 
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs']
+  args: ['push', 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs']
 
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'sample-api-nodejs', '--image', 'us-central1-docker.pkg.dev/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'sample-api-nodejs', '--image', 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 
 options:
   logging: CLOUD_LOGGING_ONLY
