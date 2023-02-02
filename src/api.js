@@ -3,7 +3,6 @@ const app = express();
 
 app.get('/', (req, res) => {
 
-  console.log("Hello World");
   console.info('Sample received a request.');
 
   res.send({message: 'OK'});
@@ -12,7 +11,7 @@ app.get('/', (req, res) => {
 app.get('/sample', (req, res) => {
   console.info('Route /sample received a request.');
 
-  res.send({message: 'OK'});
+  res.send({message: 'Received Request Successfully. Roger That...!!!'});
 });
 
 const port = process.env.PORT || 3000;
