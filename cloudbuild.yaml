@@ -12,7 +12,7 @@ steps:
 
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs']
+  args: ['push', 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs:$COMMIT_SHA']
 
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
