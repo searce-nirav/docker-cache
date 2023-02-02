@@ -5,10 +5,10 @@ steps:
     - build
     - '-t'
     - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs:$COMMIT_SHA'
-    - '--cache-from'
-    - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
+   # - '--cache-from'
+   # - 'us.gcr.io/eighth-vehicle-375706/sample-api-nodejs/sample-api-nodejs'
     - '.'
-  id: Build
+  #id: Build
 
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
