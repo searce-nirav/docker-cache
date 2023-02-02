@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
+
+  console.log("Hello World");
   console.info('Sample received a request.');
 
   res.send({message: 'OK'});
