@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
 
   console.info('Sample received a request.');
 
-  res.send({message: 'OK'});
+  res.send({message: 'Received Request Successfully. Roger That...!!!'});
 });
 
 app.get('/sample', (req, res) => {
